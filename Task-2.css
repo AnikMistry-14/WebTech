@@ -9,7 +9,7 @@ body{
 }
 
 form{
-    background-color: yellow;
+    background-color: rgb(227, 28, 107);
     padding: 25px 35px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -18,14 +18,14 @@ form{
 
 h2{
     text-align: center;
-    color: blue;
+    color: rgb(10, 203, 232);
     margin-bottom: 20px;
 }
 
 lebel{
     display: block;
     margin-bottom: 6px;
-    color: blue;
+    color: rgb(12, 246, 74);
     font-weight: bold;
 
 }
