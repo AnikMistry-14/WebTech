@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WebTech — First Lab Demo</title>
+    <style>
+        :root{
+            --bg:#f5f7fb;
+            --card:#fff;
+            --accent:#0366d6;
+            --text:#0b1220;
+            --muted:#5a6b7a;
+        }
+        [data-theme="dark"]{
+            --bg:#0b1220;
+            --card:#0f1722;
+            --accent:#58a6ff;
+            --text:#e6eef8;
+            --muted:#9fb4d3;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+            background:linear-gradient(180deg,var(--bg),#e9eef6 60%);
+            color:var(--text);
+            padding:24px;
+        }
+        header{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+        .logo{
+            width:56px;height:56px;border-radius:8px;
+            background:linear-gradient(135deg,var(--accent),#7cc0ff);
+            display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+            box-shadow:0 6px 18px rgba(2,6,23,0.12);
+            flex-shrink:0;
+        }
+        h1{font-size:1.25rem;margin:0}
+        p.lead{margin:0;color:var(--muted);font-size:.95rem}
+        main{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:18px}
+        .card{
+            background:var(--card);
+            border-radius:10px;padding:16px;
+            box-shadow:0 6px 20px rgba(2,6,23,0.06);
+        }
+        /* left column */
+        .grid{
+            display:grid;gap:12px;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        }
+        .demo-box{padding:12px;border-radius:8px;background:linear-gradient(180deg,rgba(3,102,214,0.05),transparent)}
+        .small{font-size:.9rem;color:var(--muted)}
+        /* right column */
+        .sticky{position:sticky;top:24px}
+        label{display:block;margin-bottom:6px;font-size:.85rem;color:var(--muted)}
+        input[type="text"], input[type="url"], textarea, select{
+            width:100%;padding:8px;border-radius:6px;border:1px solid #d8e3f2;background:transparent;
+            color:var(--text);
+        }
+        button{
+            background:var(--accent);color:white;border:0;padding:10px 12px;border-radius:8px;cursor:pointer;
+            font-weight:600;
+        }
+        .muted{color:var(--muted);font-size:.9rem}
+        ul.todo{list-style:none;padding:0;margin:8px 0 0 0}
+        ul.todo li{padding:8px;border-radius:6px;margin-bottom:6px;background:rgba(3,102,214,0.04);display:flex;justify-content:space-between;align-items:center}
+        .btn-ghost{background:transparent;color:var(--accent);border:1px solid rgba(3,102,214,0.12)}
+        table{width:100%;border-collapse:collapse}
+        th,td{padding:8px;border-bottom:1px solid #eef4fb;text-align:left;font-size:.95rem}
+        .preview-img{width:100%;height:160px;object-fit:cover;border-radius:8px;border:1px solid #e3eefb}
+        footer{margin-top:20px;color:var(--muted);font-size:.85rem;text-align:center}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">WT</div>
+        <div>
+            <h1>First Lab — Demo Page</h1>
+            <p class="lead">A small interactive HTML/CSS/JS demo for learning and experimentation.</p>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+            <button id="toggleTheme" title="Toggle theme" aria-pressed="false">Toggle Theme</button>
+            <button id="resetBtn" class="btn-ghost">Reset</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Left column: examples -->
+        <section>
+            <div class="card">
+                <h2 style="margin-top:0">Quick Examples</h2>
+                <div class="grid">
+                    <div class="demo-box">
+                        <strong>Live Clock</strong>
+                        <div id="clock" class="small" style="margin-top:8px;font-weight:700;font-size:1.1rem">--:--:--</div>
+                    </div>
+
+                    <div class="demo-box">
+                        <strong>Sample Table</strong>
+                        <table aria-label="Sample Data">
+                            <thead>
+                                <tr><th>Name</th><th>Score</th></tr>
+                            </thead>
+                            <tbody id="scores">
+                                <tr><td>Alice</td><td>92</td></tr>
+                                <tr><td>Bob</td><td>85</td></tr>
+                                <tr><td>Charlie</td><td>78</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="demo-box">
+                        <strong>Counter</strong>
+                        <div style="display:flex;gap:8px;margin-top:8px">
+                            <button id="decr" class="btn-ghost">-</button>
+                            <div id="count" style="min-width:48px;text-align:center;font-weight:700">0</div>
+                            <button id="incr">+</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-box">
+                        <strong>Color Swatch</strong>
+                        <div style="display:flex;gap:8px;margin-top:8px">
+                            <div style="width:36px;height:36px;background:#0366d6;border-radius:6px"></div>
+                            <div style="width:36px;height:36px;background:#58a6ff;border-radius:6px"></div>
+                            <div style="width:36px;height:36px;background:#7cc0ff;border-radius:6px"></div>
+                        </div>
+                        <p class="small" style="margin-top:8px">Use CSS variables to theme quickly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top:12px">
+                <h3 style="margin-top:0">Image Preview</h3>
+                <label for="imgUrl">Image URL</label>
+                <input id="imgUrl" type="url" placeholder="https://example.com/photo.jpg" />
+                <div style="margin-top:8px">
+                    <img id="preview" class="preview-img" alt="Preview will appear here" src="" />
+                </div>
+                <p class="muted" style="margin-top:8px">Paste an image URL to preview it. If blank, a placeholder will appear.</p>
+            </div>
+        </section>
+
+        <!-- Right column: interactive tools -->
+        <aside class="sticky">
+            <div class="card">
+                <h3 style="margin-top:0">To‑Do (Local)</h3>
+                <label for="todoText">New item</label>
+                <input id="todoText" type="text" placeholder="e.g., Finish lab report" />
+                <div style="display:flex;gap:8px;margin-top:8px">
+                    <button id="addTodo">Add</button>
+                    <button id="clearTodos" class="btn-ghost">Clear</button>
+                </div>
+                <ul class="todo" id="todoList" aria-live="polite"></ul>
+                <p class="muted">Items are stored in localStorage for this demo.</p>
+            </div>
+
+            <div class="card" style="margin-top:12px">
+                <h3 style="margin-top:0">Form Example</h3>
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name" />
+                <label for="message" style="margin-top:8px">Message</label>
+                <textarea id="message" rows="3" placeholder="Say something..."></textarea>
+                <div style="display:flex;gap:8px;margin-top:8px">
+                    <button id="submitForm">Submit</button>
+                    <button id="fillDemo" class="btn-ghost">Fill Demo</button>
+                </div>
+                <p id="formStatus" class="muted" style="margin-top:8px">No submissions yet.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        Demo page — modify this file at /C:/xampp/htdocs/WebTech/first_lab.html
+    </footer>
+
+    <script>
+        // Theme toggle persisted
+        const html = document.documentElement;
+        const themeBtn = document.getElementById('toggleTheme');
+        const resetBtn = document.getElementById('resetBtn');
+
+        function applyTheme(t){
+            if(t === 'dark') {
+                html.setAttribute('data-theme','dark');
+                themeBtn.setAttribute('aria-pressed','true');
+            } else {
+                html.removeAttribute('data-theme');
+                themeBtn.setAttribute('aria-pressed','false');
+            }
+            localStorage.setItem('demo-theme', t);
+        }
+        themeBtn.addEventListener('click', () => {
+            const current = localStorage.getItem('demo-theme') === 'dark' ? 'dark' : 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+        // restore theme
+        applyTheme(localStorage.getItem('demo-theme') === 'dark' ? 'dark' : 'light');
+
+        // Clock
+        function updateClock(){
+            const el = document.getElementById('clock');
+            const now = new Date();
+            el.textContent = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Counter
+        let count = 0;
+        const countEl = document.getElementById('count');
+        document.getElementById('incr').addEventListener('click', () => { count++; countEl.textContent = count; });
+        document.getElementById('decr').addEventListener('click', () => { count = Math.max(0, count-1); countEl.textContent = count; });
+
+        // Image preview
+        const preview = document.getElementById('preview');
+        const imgUrl = document.getElementById('imgUrl');
+        function updatePreview(){
+            const url = imgUrl.value.trim();
+            preview.src = url || 'data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300"><rect width="100%" height="100%" fill="%23e6eef8"/><text x="50%" y="50%" fill="%2388a0bf" font-size="24" dominant-baseline="middle" text-anchor="middle">Preview</text></svg>';
+        }
+        imgUrl.addEventListener('input', updatePreview);
+        updatePreview();
+
+        // To-do list (localStorage)
+        const todoKey = 'demo-todos';
+        const todoListEl = document.getElementById('todoList');
+        function getTodos(){ try { return JSON.parse(localStorage.getItem(todoKey)) || []; } catch(e){ return []; } }
+        function saveTodos(arr){ localStorage.setItem(todoKey, JSON.stringify(arr)); }
+        function renderTodos(){
+            const todos = getTodos();
+            todoListEl.innerHTML = '';
+            todos.forEach((t, i) => {
+                const li = document.createElement('li');
+                li.textContent = t;
+                const del = document.createElement('button');
+                del.textContent = '✕';
+                del.className = 'btn-ghost';
+                del.style.padding = '6px 8px';
+                del.addEventListener('click', () => {
+                    todos.splice(i,1); saveTodos(todos); renderTodos();
+                });
+                li.appendChild(del);
+                todoListEl.appendChild(li);
+            });
+        }
+        document.getElementById('addTodo').addEventListener('click', () => {
+            const txt = document.getElementById('todoText').value.trim();
+            if(!txt) return;
+            const todos = getTodos();
+            todos.unshift(txt);
+            saveTodos(todos);
+            document.getElementById('todoText').value = '';
+            renderTodos();
+        });
+        document.getElementById('clearTodos').addEventListener('click', () => {
+            localStorage.removeItem(todoKey);
+            renderTodos();
+        });
+        renderTodos();
+
+        // Simple form example
+        const status = document.getElementById('formStatus');
+        document.getElementById('fillDemo').addEventListener('click', () => {
+            document.getElementById('name').value = 'Student';
+            document.getElementById('message').value = 'This is a demo submission.';
+        });
+        document.getElementById('submitForm').addEventListener('click', () => {
+            const name = document.getElementById('name').value.trim();
+            const msg = document.getElementById('message').value.trim();
+            if(!name || !msg){
+                status.textContent = 'Please fill name and message.';
+                return;
+            }
+            // pretend submit
+            status.textContent = `Thanks, ${name}! Message received.`;
+            // clear fields
+            document.getElementById('name').value = '';
+            document.getElementById('message').value = '';
+        });
+
+        // Reset (clear local storage except theme)
+        resetBtn.addEventListener('click', () => {
+            const theme = localStorage.getItem('demo-theme');
+            localStorage.clear();
+            if(theme) localStorage.setItem('demo-theme', theme);
+            updatePreview();
+            renderTodos();
+            status.textContent = 'Reset complete.';
+        });
+
+        // Small accessibility: allow Enter to add todo
+        document.getElementById('todoText').addEventListener('keydown', (e) => {
+            if(e.key === 'Enter') { document.getElementById('addTodo').click(); }
+        });
+    </script>
+</body>
+</html>
