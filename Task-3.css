@@ -1,0 +1,133 @@
+body {
+    padding-left: 25%;
+    padding-right: 45px;
+    font-family: Verdana;
+    font-size: 1em;
+}
+
+.info {
+    padding-top: 5px;
+    padding-left: 20px;
+    background: #e8e7e7;
+    width: 850px;
+}
+
+.star {
+    color: red;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.top-text {
+    margin-right: 20px;
+}
+
+.top-text-1 {
+    font-weight: bold;
+}
+
+.top-text-1,
+.top-text-2,
+.top-text-3 {
+    margin-right: 20px;
+}
+
+
+.donor-info-heading,
+.honorarium-memorial-heading,
+.additional-info-heading {
+    color: red;
+    font-weight: bold;
+}
+
+
+.donor-info label,
+.donation-info label,
+.additional-info-heading + p + label {
+    display: inline-block;
+    width: 180px; 
+    text-align: right;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.donor-info input[type="text"],
+.donor-info select,
+.donation-info input[type="text"],
+.donation-info select,
+textarea {
+    width: 300px;
+    padding: 4px;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+small {
+    margin-left: 190px;
+}
+
+.amount-option {
+    display: inline-block;
+    margin-left: 190px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.donor-info-input-other-amount {
+    font-weight: bold;
+    margin-left: 190px;
+    margin-top: 5px;
+}
+
+.cc {
+    margin-top: 5px;
+    margin-left: 190px;
+}
+
+.cc-box {
+    width: 50px;
+}
+
+
+.donation-option {
+    display: inline-block;
+    margin-left: 190px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.donation-info input[type="radio"] {
+    margin-right: 5px;
+}
+
+
+.additional-info-heading + p {
+    padding-left: 100px;
+}
+
+.additional-info-heading + p + label {
+    width: 180px;
+    text-align: right;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+textarea {
+    margin-top: 5px;
+    width: 350px;
+    height: 100px;
+    resize: vertical;
+}
+
+.buttons {
+    margin-top: 10px;
+    margin-left: 300px;
+}
+
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+}
