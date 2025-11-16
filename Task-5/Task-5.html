@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ANIK MISTRY">
+    <meta name="description" content="Personal portfolio showcasing my education and professional background.">
+    <meta name="keywords" content="portfolio, computer science, internship, education">
+    <title>My Personal Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        header { background-color: #2c3e50; color: white; padding: 2rem; text-align: center; }
+        .profile-pic { width: 150px; height: 150px; border-radius: 50%; margin: 1rem auto; display: block; border: 3px solid white; }
+        .social-links { margin-top: 1rem; }
+        .social-links a { color: white; text-decoration: none; margin: 0 1rem; font-size: 1rem; }
+        .social-links a:hover { text-decoration: underline; }
+        nav { background-color: #34495e; padding: 1rem; }
+        nav a { color: white; text-decoration: none; margin: 0 1.5rem; }
+        nav a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 2rem auto; padding: 0 2rem; }
+        section { margin: 2rem 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        table, th, td { border: 1px solid #ddd; }
+        th, td { padding: 1rem; text-align: left; }
+        th { background-color: #ecf0f1; }
+        form { background-color: #ecf0f1; padding: 1.5rem; border-radius: 5px; margin-top: 1rem; }
+        input, textarea { width: 100%; padding: 0.5rem; margin: 0.5rem 0; border: 1px solid #bdc3c7; border-radius: 3px; }
+        button { background-color: #2c3e50; color: white; padding: 0.75rem 2rem; border: none; border-radius: 3px; cursor: pointer; margin-top: 1rem; }
+        button:hover { background-color: #34495e; }
+        footer { background-color: #2c3e50; color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./img1.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>ANIK MISTRY</h1>
+        <p>Computer Science Student | Aspiring Software Developer</p>
+        <div class="social-links">
+            <a href=https://www.facebook.com/anik.mistry.35 target="_blank">Facebook</a>
+            <a href=https://github.com/AnikMistry-14/WebTech.git target="_blank">GitHub</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate computer science student with a strong foundation in web development, Software Development and Artificial Intelligence. I am seeking an internship opportunity to apply my technical skills and contribute to innovative projects. My goal is to create efficient, user-friendly software solutions.</p>
+        </section>
+
+        <section id="education">
+            <h2>Educational Qualifications</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Qualification</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                        <th>Grade/GPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SSC</td>
+                        <td>Bagerhat GOVT. High School</td>
+                        <td>2019</td>
+                        <td>4.85</td>
+                    </tr>
+                    <tr>
+                        <td>HSC</td>
+                        <td>P.C College Bagerhat</td>
+                        <td>2021</td>
+                        <td>5.00</td>
+                    </tr>
+                    <tr>
+                        <td>Bsc in CSE</td>
+                        <td>American International University Bangladesh</td>
+                        <td>2025</td>
+                        <td>3.81</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Anik Mistry. All rights reserved.</p>
+    </footer>
+</body>
+</html>
