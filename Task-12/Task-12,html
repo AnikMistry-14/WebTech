@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>User Card</title>
+    <link rel="stylesheet" href="Task-12.css" />
+</head>
+<body>
+    <div class="card">
+        <div class="badge">Online</div>
+
+        <div class="profile">
+            <img class="avatar" src="./img1.jpg" alt="Profile photo">
+            <div>
+                <p class="name">Anik Mistry</p>
+                <p class="bio">Product designer focused on simple, accessible interfaces. Loves coffee and long walks.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
