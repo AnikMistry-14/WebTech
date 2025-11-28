@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex; 
+    width: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+}
+
+.main-content {
+    width: 60%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.advertisement {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+    border-left: 1px solid #ccc;
+}
+
+h1, h2 {
+    margin: 0 0 10px;
+}
+
+p {
+    margin: 0 0 15px;
+}
